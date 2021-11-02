@@ -8,7 +8,7 @@ export default function postTweet(tweet) {
     }
     ).then((response) => {
         if (response.ok) {
-            console.log(`New Tweet Added, ${response}`)
+            console.log(`New Tweet Added`)
         } else {
             throw new Error('There was a problem adding your twitter, please try again')
         }

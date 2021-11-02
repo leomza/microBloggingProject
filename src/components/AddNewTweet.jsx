@@ -3,9 +3,9 @@ import Error from './Error'
 import shortid from 'shortid'
 import postTweet from '../services/postTweet'
 
-const AddNewTweet = () => {
-  const emptyTweet = { content: '', userName: 'Ironman2' }
-  const [tweet, setTweet] = useState({ content: '', userName: 'Ironman2' })
+const AddNewTweet = ({ userName }) => {
+  const emptyTweet = { content: '' }
+  const [tweet, setTweet] = useState({ content: '', userName: userName })
   const [error, setError] = useState(false)
   const [countCharacter, setCountCharacter] = useState(0)
   const [isPending, setIsPending] = useState(false)

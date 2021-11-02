@@ -58,7 +58,7 @@ body {
 
 .boton:disabled {
     filter: brightness(50%);
-    cursor: not-allowed; 
+    cursor: not-allowed;
 }
 
 .twitter__container {
@@ -104,4 +104,39 @@ body {
     margin-left: 16px;
     padding-left: 4px;
     width: 50%;
+}
+
+.navBar {
+    background-color: #343A40;
+    margin-left: 182px;
+    margin-right: 182px;
+    border-radius: 6px;
+}
+
+.navBar__list {
+    margin-top: 0px;
+    list-style-type: none;
+    display: flex;
+    padding: 15px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.navBar__link--content {
+    padding-right: 30px;
+}
+
+.navBar__link {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+}
+
+.navBar__link:active {
+    color: #FFFFFF;
 }
