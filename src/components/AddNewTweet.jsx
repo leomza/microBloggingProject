@@ -1,15 +1,23 @@
 import React, { useState } from 'react'
 import Error from './Error'
+import shortid from 'shortid'
+import postTweet from '../services/postTweet'
 
-const AddNewTweet = ({ addTweet }) => {
-  const emptyTweet = { message: '', userName: 'Leonardo' }
-  const [tweet, setTweet] = useState({ message: '', userName: 'Leonardo' })
+const AddNewTweet = () => {
+  const emptyTweet = { content: '', userName: 'Ironman2' }
+  const [tweet, setTweet] = useState({ content: '', userName: 'Ironman2' })
   const [error, setError] = useState(false)
   const [countCharacter, setCountCharacter] = useState(0)
+  const [isPending, setIsPending] = useState(false)
 
   const handleMessageChange = e => {
     setCountCharacter(e.target.value.length)
-    setTweet({ ...tweet, message: e.target.value })
+    setTweet({
+      ...tweet,
+      content: e.target.value,
+      date: new Date().toISOString(),
+      id: shortid.generate()
+    })
   }
 
   const submitTweet = event => {
@@ -17,15 +25,20 @@ const AddNewTweet = ({ addTweet }) => {
     event.preventDefault()
 
     //If I have an error, I set the state of the error to False
-    if (tweet.message === '') {
+    if (tweet.content === '') {
       setError(true)
       return
     } else {
       //If I dont have error, I set the state of the error to False
       setError(false)
-      addTweet(tweet)
-      setTweet(emptyTweet)
-      setCountCharacter(0)
+      setIsPending(true)
+
+      //Function that will post the twitter in the server
+      postTweet(tweet).then(() => {
+        setIsPending(false)
+        setTweet(emptyTweet)
+        setCountCharacter(0)
+      })
     }
   }
 
@@ -38,13 +51,16 @@ const AddNewTweet = ({ addTweet }) => {
           className='comment'
           type='text'
           placeholder='What you have in mind...'
-          value={tweet.message}
+          value={tweet.content}
           onChange={handleMessageChange}
           maxLength={300}
         />
         <small className='comment__count'>{countCharacter}</small>
-        {error ? <Error message='The tweet is requiered' /> : null}
-        {countCharacter < 141 ? (
+        {error && countCharacter === 0 && !isPending ? (
+          <Error message='The tweet is requiered' />
+        ) : null}
+
+        {countCharacter < 141 && !isPending ? (
           <button className='boton' type='submit'>
             Tweet
           </button>
@@ -55,6 +71,12 @@ const AddNewTweet = ({ addTweet }) => {
               Tweet
             </button>
           </div>
+        )}
+
+        {isPending && (
+          <button disabled className='boton' type='submit'>
+            Adding tweet...
+          </button>
         )}
       </form>
     </div>

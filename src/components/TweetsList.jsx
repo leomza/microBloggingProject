@@ -5,7 +5,7 @@ const TweetsList = ({ allTweets }) => {
   return (
     <div>
       {allTweets &&
-        allTweets.map(tweet => <Tweet key={tweet.key} {...{ tweet }} />)}
+        allTweets.map(tweet => <Tweet key={tweet.id} {...{ tweet }} />)}
     </div>
   )
 }
