@@ -1,38 +1,107 @@
-.App {
-  text-align: center;
+body {
+    background: #15202B;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.recatangule {
+    width: 600px;
+    height: 180px;
+    left: 367px;
+    border: 2px solid #CCCCCC;
+    box-sizing: border-box;
+    border-radius: 6px;
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.comment {
+    width: 91%;
+    margin-top: 16px;
+    margin-left: 20px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #CCCCCC;
+    outline: none;
+    background-color: transparent;
+    resize: none;
+    border: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.comment__count {
+    color: #CCCCCC;
 }
 
-.App-link {
-  color: #61dafb;
+.boton {
+    position: absolute;
+    width: 68px;
+    height: 34px;
+    left: 713px;
+    top: 131px;
+    background: #007BFF;
+    border: none;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    border-radius: 4px;
+    justify-content: center;
+    cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.boton:disabled {
+    filter: brightness(50%);
+    cursor: not-allowed; 
+}
+
+.twitter__container {
+    background: #343A40;
+    border-radius: 6px;
+    width: 600px;
+    height: auto;
+    margin: auto;
+    padding: 10px 20px;
+    margin-bottom: 15px;
+    word-break: break-all;
+}
+
+.twitter__information {
+    display: flex;
+    justify-content: space-between;
+    color: #6C757D;
+}
+
+.twitter__message {
+    color: #FFFFFF;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.error__message {
+    color: #721C24;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background: #F8D7DA;
+    border: 1px solid #F5C6CB;
+    box-sizing: border-box;
+    border-radius: 4px;
+    margin-left: 16px;
+    padding-left: 4px;
+    width: 50%;
 }
