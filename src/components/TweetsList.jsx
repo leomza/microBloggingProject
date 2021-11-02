@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Tweet from './Tweet'
+import { InfoTweetsContext } from '../context/InfoTweetsContext'
 
-const TweetsList = ({ allTweets }) => {
+const TweetsList = () => {
+  //Extract from the provider the list of tweets:
+  const { allTweets } = useContext(InfoTweetsContext)
+
   return (
     <div>
       {allTweets &&

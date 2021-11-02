@@ -1,9 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import Error from './Error'
 import shortid from 'shortid'
 import postTweet from '../services/postTweet'
+import { InfoUserNameContext } from '../context/InfoUserNameContext'
 
-const AddNewTweet = ({ userName }) => {
+const AddNewTweet = () => {
+  //Extract from the provider the information:
+  const { userName } = useContext(InfoUserNameContext)
+
   const emptyTweet = { content: '' }
   const [tweet, setTweet] = useState({ content: '', userName: userName })
   const [error, setError] = useState(false)

@@ -1,7 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import Error from './Error'
+import { InfoUserNameContext } from '../context/InfoUserNameContext'
 
-const ProfileForm = ({ userName, changeUserName }) => {
+const ProfileForm = () => {
+  //Extract from the provider the information:
+  const { userName, changeUserName } = useContext(InfoUserNameContext)
+
   const [error, setError] = useState(false)
   const [userNameEdit, setUserNameEdit] = useState(userName)
 
