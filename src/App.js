@@ -7,6 +7,8 @@ import ProfileForm from './components/ProfileForm';
 import InfoTweetsProvider from './context/InfoTweetsContext'
 import InfoUserNameProvider from './context/InfoUserNameContext';
 
+/* Hosting URL: https://microblogtwitter.web.app */
+
 function App() {
   return (
     <InfoUserNameProvider>
