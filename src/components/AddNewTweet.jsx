@@ -12,7 +12,7 @@ const AddNewTweet = () => {
   const { isLoading } = useContext(InfoTweetsContext)
 
   const emptyTweet = { content: '' }
-  const [tweet, setTweet] = useState({ content: '', userName: userName })
+  const [tweet, setTweet] = useState({})
   const [error, setError] = useState(false)
   const [countCharacter, setCountCharacter] = useState(0)
   const [isPending, setIsPending] = useState(false)
@@ -20,7 +20,7 @@ const AddNewTweet = () => {
   const handleMessageChange = e => {
     setCountCharacter(e.target.value.length)
     setTweet({
-      ...tweet,
+      userName: userName,
       content: e.target.value,
       date: new Date().toISOString(),
       id: shortid.generate()
@@ -66,7 +66,7 @@ const AddNewTweet = () => {
             />
             <div className={styles.rectangule__info}>
               <small className={styles.comment__count}>{countCharacter}</small>
-              
+
               {error && countCharacter === 0 && !isPending ? (
                 <Error message='The tweet is requiered' />
               ) : null}
