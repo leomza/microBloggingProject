@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react'
 import Error from './Error'
 import { InfoUserNameContext } from '../context/InfoUserNameContext'
 import styles from '../styles/profileForm.module.css'
+import swal from 'sweetalert';
 
 const ProfileForm = () => {
   //Extract from the provider the information:
@@ -26,6 +27,7 @@ const ProfileForm = () => {
       //If I dont have error, I set the state of the error to False
       setError(false)
       changeUserName(userNameEdit)
+      swal("Good job!", "You changed the username!", "success");
     }
   }
 
