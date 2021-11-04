@@ -1,0 +1,99 @@
+.title {
+    position: absolute;
+    width: 103px;
+    height: 42px;
+    left: 369px;
+    top: 110px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 42px;
+    color: #FFFFFF;
+}
+
+.subtitle {
+    position: absolute;
+    width: 90px;
+    height: 21px;
+    left: 368px;
+    top: 178px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.form__content {
+    position: absolute;
+    width: 600px;
+    height: 61px;
+    left: 367px;
+    top: 220px;
+    border: 2px solid #CCCCCC;
+    box-sizing: border-box;
+    border-radius: 6px;
+}
+
+.form__info {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+    width: 90%;
+    position: relative;
+    top: 15px;
+    margin-left: 15px;
+}
+
+.button {
+    width: 68px;
+    height: 34px;
+    background: #007BFF;
+    border: none;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    border-radius: 4px;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    top: 100%;
+    left: 89%;
+}
+
+/* Phones */
+@media only screen and (max-width: 575px) {
+    .title{
+        top: 40px;
+        left: 30px;
+    }
+
+    .subtitle{
+        top: 100px;
+        left: 30px;
+    }
+
+    .form__content{
+        top: 150px;
+        left: 30px;
+        width: 250px;
+    } 
+    
+    .button{
+        left: 180px;
+    }
+}

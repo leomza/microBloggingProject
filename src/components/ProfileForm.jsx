@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react'
 import Error from './Error'
 import { InfoUserNameContext } from '../context/InfoUserNameContext'
+import styles from '../styles/profileForm.module.css'
 
 const ProfileForm = () => {
   //Extract from the provider the information:
@@ -30,16 +31,18 @@ const ProfileForm = () => {
 
   return (
     <div>
-      <h1>Profile</h1>
-      <form onSubmit={submitChangeUserName}>
+      <h1 className={styles.title}>Profile</h1>
+      <h3 className={styles.subtitle}>User Name</h3>
+      <form className={styles.form__content} onSubmit={submitChangeUserName}>
         <input
           type='text'
           value={userNameEdit}
           onChange={handleUserNameChange}
           maxLength={30}
+          className={styles.form__info}
         />
         {error ? <Error message='The username is requiered' /> : null}
-        <button className='boton' type='submit'>
+        <button className={styles.button } type='submit'>
           Save
         </button>
       </form>

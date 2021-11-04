@@ -1,0 +1,33 @@
+.twitter__container {
+    background: #343A40;
+    border-radius: 6px;
+    width: 600px;
+    height: auto;
+    margin: 5px auto 20px 375px;
+    padding: 10px 20px;
+    margin-bottom: 15px;
+    word-break: break-all;
+}
+
+.twitter__information {
+    display: flex;
+    justify-content: space-between;
+    color: #6C757D;
+}
+
+.twitter__message {
+    color: #FFFFFF;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+/* Phones */
+@media only screen and (max-width: 575px) {
+    .twitter__container {
+        width: 75%;
+        margin: 5px auto 20px auto;
+    }
+}

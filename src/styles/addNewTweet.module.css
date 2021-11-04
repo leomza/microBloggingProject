@@ -1,0 +1,77 @@
+.recatangule {
+    display: flex;
+    width: 630px;
+    border: 2px solid #CCCCCC;
+    border-radius: 6px;
+    margin: 5px auto 20px 375px;
+}
+
+.recatangule__form {
+    width: 100%;
+}
+
+.comment {
+    width: 90%;
+    margin-top: 16px;
+    margin-left: 20px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #CCCCCC;
+    background-color: transparent;
+    outline: none;
+    resize: none;
+    border: none;
+}
+
+.comment__count {
+    color: #CCCCCC;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+.button {
+    width: 68px;
+    height: 34px;
+    background: #007BFF;
+    border: none;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    border-radius: 4px;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.button:disabled {
+    filter: brightness(50%);
+    cursor: not-allowed;
+}
+
+.rectangule__info {
+    display: flex;
+    padding-bottom: 10px;
+    flex-direction: row-reverse;
+}
+
+.content__error {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Phones */
+@media only screen and (max-width: 575px) {
+    .recatangule {
+        width: 85%;
+        margin: 5px auto 20px auto;
+    }
+}

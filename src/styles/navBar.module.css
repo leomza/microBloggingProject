@@ -1,0 +1,44 @@
+.navBar {
+    background-color: #343A40;
+    margin-left: 182px;
+    margin-right: 182px;
+    border-radius: 6px;
+    margin-bottom: 92px;
+}
+
+.navBar__list {
+    margin-top: 0px;
+    list-style-type: none;
+    display: flex;
+    padding: 15px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.navBar__link_content {
+    padding-right: 30px;
+}
+
+.navBar__link {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+}
+
+.navBar__link:active {
+    color: #FFFFFF;
+}
+
+/* Phones */
+@media only screen and (max-width: 575px) {
+    .navBar{
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-bottom: 5px;
+    }
+}

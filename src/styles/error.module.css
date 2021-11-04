@@ -1,0 +1,16 @@
+.error__message {
+    color: #721C24;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background: #F8D7DA;
+    border: 1px solid #F5C6CB;
+    box-sizing: border-box;
+    border-radius: 4px;
+    margin-left: 23px;
+}

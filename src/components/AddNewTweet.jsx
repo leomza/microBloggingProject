@@ -3,6 +3,7 @@ import Error from './Error'
 import shortid from 'shortid'
 import postTweet from '../services/postTweet'
 import { InfoUserNameContext } from '../context/InfoUserNameContext'
+import styles from '../styles/addNewTweet.module.css'
 
 const AddNewTweet = () => {
   //Extract from the provider the information:
@@ -47,41 +48,43 @@ const AddNewTweet = () => {
   }
 
   return (
-    <div className='recatangule'>
-      <form onSubmit={submitTweet}>
+    <div className={styles.recatangule}>
+      <form className={styles.recatangule__form} onSubmit={submitTweet}>
         <textarea
           rows='5'
           cols='50'
-          className='comment'
+          className={styles.comment}
           type='text'
           placeholder='What you have in mind...'
           value={tweet.content}
           onChange={handleMessageChange}
           maxLength={300}
         />
-        <small className='comment__count'>{countCharacter}</small>
-        {error && countCharacter === 0 && !isPending ? (
-          <Error message='The tweet is requiered' />
-        ) : null}
+        <div className={styles.rectangule__info}>
+          <small className={styles.comment__count}>{countCharacter}</small>
+          {error && countCharacter === 0 ? (
+            <Error message='The tweet is requiered' />
+          ) : null}
 
-        {countCharacter < 141 && !isPending ? (
-          <button className='boton' type='submit'>
-            Tweet
-          </button>
-        ) : (
-          <div>
-            <Error message="The tweet can't contain more than 140 chars." />
-            <button disabled className='boton' type='submit'>
+          {countCharacter < 141 ? (
+            <button className={styles.button} type='submit'>
               Tweet
             </button>
-          </div>
-        )}
+          ) : (
+            <div className={styles.content__error}>
+              <Error message="The tweet can't contain more than 140 chars." />
+              <button disabled className={styles.button} type='submit'>
+                Tweet
+              </button>
+            </div>
+          )}
 
-        {isPending && (
-          <button disabled className='boton' type='submit'>
-            Adding tweet...
-          </button>
-        )}
+          {isPending && (
+            <button disabled className={styles.button} type='submit'>
+              Adding tweet...
+            </button>
+          )}
+        </div>
       </form>
     </div>
   )
