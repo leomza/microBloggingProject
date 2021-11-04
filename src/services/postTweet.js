@@ -7,6 +7,8 @@ export default function postTweet(tweet) {
         body: JSON.stringify(tweet)
     }
     ).then((response) => {
+        console.log(response);
+        console.log(tweet);
         if (response.ok) {
             console.log(`New Tweet Added`)
         } else {

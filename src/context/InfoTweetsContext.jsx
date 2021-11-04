@@ -7,14 +7,23 @@ export const InfoTweetsContext = createContext({})
 const InfoTweetsProvider = props => {
   //All the tweets:
   const [allTweets, setAllTweets] = useState([])
+  //This State is to show the Spinner
+  const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
-    const id = setInterval(() =>
-      //Call the function in the services call "getTweets()" and assign the return to setAllTweets
-      getTweets().then(tweets => setAllTweets(tweets))
-    , 10000);
-    return () => clearInterval(id);
-  }, [])
+    const id = setInterval(
+      () =>
+        //Call the function in the services call "getTweets()" and assign the return to setAllTweets
+        getTweets().then(tweets => setAllTweets(tweets)),
+      5000
+    )
+    if (Object.keys(allTweets).length === 0) {
+      setIsLoading(true)
+    } else {
+      setIsLoading(false)
+    }
+    return () => clearInterval(id)
+  }, [allTweets])
 
   //Function to sort the Tweets by created date
   const sortTweetsByCreatedDate = () => {
@@ -23,7 +32,7 @@ const InfoTweetsProvider = props => {
   sortTweetsByCreatedDate()
 
   return (
-    <InfoTweetsContext.Provider value={{ allTweets }}>
+    <InfoTweetsContext.Provider value={{ allTweets, isLoading }}>
       {props.children}
     </InfoTweetsContext.Provider>
   )
