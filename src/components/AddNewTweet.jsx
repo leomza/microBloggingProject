@@ -5,10 +5,15 @@ import styles from '../styles/addNewTweet.module.css'
 import { collection, addDoc } from 'firebase/firestore'
 import { FirebaseContext } from '../config/Firebase'
 import { getFirestore } from 'firebase/firestore'
+import { getAuth } from 'firebase/auth'
 
 const AddNewTweet = () => {
   //Extract from the provider the information:
   const { userName } = useContext(InfoUserNameContext)
+
+  const auth = getAuth()
+  const user = auth.currentUser
+
   //This is how to get the data from Firebase
   const firebase = useContext(FirebaseContext)
   const db = getFirestore(firebase)
@@ -22,10 +27,11 @@ const AddNewTweet = () => {
   const handleMessageChange = e => {
     setCountCharacter(e.target.value.length)
     setTweet({
-      userName: userName,
+      userName: user.uid,
       content: e.target.value,
       date: new Date().toISOString()
     })
+    console.log(tweet)
   }
 
   const submitTweet = async event => {

@@ -4,12 +4,15 @@ import './index.css';
 import App from './App';
 import { BrowserRouter as Router } from 'react-router-dom';
 import FirebaseProvider from './config/Firebase'
+import AuthProvider from './context/AuthContext';
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
       <FirebaseProvider>
-        <App />
+        <AuthProvider>
+          <App />
+        </AuthProvider>
       </FirebaseProvider>
     </Router>
   </React.StrictMode>,

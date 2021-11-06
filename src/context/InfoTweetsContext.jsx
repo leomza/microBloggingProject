@@ -5,7 +5,10 @@ import {
   collection,
   onSnapshot,
   orderBy,
-  query
+  query,
+  startAfter,
+  limit,
+  getDocs
 } from 'firebase/firestore' //I use "onSnapshot" because that call every second to the database and check if something change. If it change will re-render all the component again
 
 //Create the Context

@@ -7,7 +7,7 @@ import Loader from 'react-loader-spinner'
 const TweetsList = () => {
   //Extract from the provider the list of tweets:
   const { allTweets, isLoading } = useContext(InfoTweetsContext)
-console.log(isLoading);
+
   return (
     <div>
       {isLoading ? (
